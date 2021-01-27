@@ -17,6 +17,6 @@ aws cloudformation create-stack --stack-name petstore-api-pipeline \
 ParameterKey=BucketRoot,ParameterValue=jun-toda-aws-codepipeline-codebuild-with-postman \
 ParameterKey=GitHubBranch,ParameterValue=master \
 ParameterKey=GitHubRepositoryName,ParameterValue=aws-codepipeline-codebuild-with-postman \
-ParameterKey=GitHubToken,ParameterValue=bef9b44805f7d19668f57dd8b8f88b68e14ced5f \
+ParameterKey=GitHubToken,ParameterValue=3382b1033e9e16639338fa7481559cd3d4b13e91 \
 ParameterKey=GitHubUser,ParameterValue=jun-toda \
 --capabilities CAPABILITY_NAMED_IAM
