@@ -1,0 +1,19 @@
+
+jun-toda-aws-codepipeline-codebuild-with-postman
+bef9b44805f7d19668f57dd8b8f88b68e14ced5f
+
+aws s3 cp PetStoreAPI.postman_collection.json \
+s3://jun-toda-aws-codepipeline-codebuild-with-postman/postman-env-files/PetStoreAPI.postman_collection.json
+
+aws s3 cp PetStoreAPIEnvironment.postman_environment.json \
+s3://jun-toda-aws-codepipeline-codebuild-with-postman/postman-env-files/PetStoreAPIEnvironment.postman_environment.json
+
+aws cloudformation create-stack --stack-name petstore-api-pipeline \
+--template-body file://./petstore-api-pipeline.yaml \
+--parameters \
+ParameterKey=BucketRoot,ParameterValue=jun-toda-aws-codepipeline-codebuild-with-postman \
+ParameterKey=GitHubBranch,ParameterValue=master \
+ParameterKey=GitHubRepositoryName,ParameterValue=aws-codepipeline-codebuild-with-postman \
+ParameterKey=GitHubToken,ParameterValue=bef9b44805f7d19668f57dd8b8f88b68e14ced5f \
+ParameterKey=GitHubUser,ParameterValue=jun-toda \
+--capabilities CAPABILITY_NAMED_IAM
